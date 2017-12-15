@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  discovery:
+    build: .
+    image: $DOCKER_REGISTRY/kickster/discovery-service
+    networks:
+      - kickster
+    ports:
+      - 8761:8761
+networks:
+  kickster:

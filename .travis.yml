@@ -1,0 +1,12 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - mvn clean package -Dmaven.test.skip=true
+  - docker build -t $DOCKER_REGISTRY/$DOCKER_NAMESPACE/discovery-service .
+  
+after_success:
+  - docker login --username $DOCKER_USER -p $DOCKER_PASSWORD $DOCKER_REGISTRY
+  - docker push $DOCKER_REGISTRY/$DOCKER_NAMESPACE/discovery-service

@@ -1,0 +1,8 @@
+discovery:
+  ports:
+    - 8761:8761
+  labels:
+    io.rancher.container.pull_image: always
+  image: $DOCKER_REGISTRY/kickster/discovery-service:latest
+  tty: true
+  stdin_open: true
