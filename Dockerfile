@@ -1,5 +1,5 @@
 FROM ibmjava
-MAINTAINER ibmcloud bluemix
+MAINTAINER Rockstar Team
 
 ADD target/discovery-service-1.0.0-SNAPSHOT.jar discovery-service.jar
 EXPOSE 8761
